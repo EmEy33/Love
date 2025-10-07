@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>A Message Just for You</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div id="gif-bg"></div> 
+
+    <div class="birthday-card message-page">
+        <h2>💌 A Letter to My Queen 👑</h2>
+        
+        <div class="message-content">
+            <p>My Dearest Love,</p>
+            <p>Words feel too small to express how much joy you bring into my life. Every day with you is a gift...</p>
+            <p>I wish you the happiest birthday, filled with joy, laughter, and everything you deserve. I love you more than yesterday, and less than tomorrow.</p>
+            <p>Thank you for being my constant, my adventure, and the queen of my heart. I wish you the happiest birthday, filled with all the laughter and happiness you deserve.</p>
+            <p>I love you more than yesterday, and less than tomorrow.</p>
+            
+            <p>Happy Birthday, My Angeline!</p>
+        </div>
+
+        <p class="signature-name">Forever Yours, Anthony</p>
+
+        <nav class="back-nav">
+            <a href="index.html" class="nav-button">🏠 Back to Home</a>
+        </nav>
+    </div>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const confettiContainer = document.createElement('div');
+            confettiContainer.classList.add('confetti');
+            document.body.appendChild(confettiContainer);
+
+            const colors = ['#ff69b4', '#ffd700', '#00bcd4', '#f08080']; 
+
+            for (let i = 0; i < 50; i++) { 
+                const piece = document.createElement('div');
+                piece.classList.add('confetti-piece');
+                piece.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+                piece.style.left = `${Math.random() * 100}vw`; 
+                piece.style.animationDelay = `${Math.random() * 10}s`; 
+                piece.style.animationDuration = `${7 + Math.random() * 8}s`; 
+                
+                const size = `${5 + Math.random() * 10}px`;
+                piece.style.width = size;
+                piece.style.height = size;
+
+                if (Math.random() < 0.5) { 
+                    piece.style.borderRadius = '2px'; 
+                } else {
+                    piece.style.borderRadius = '50%';
+                }
+
+                confettiContainer.appendChild(piece);
+            }
+        });
+    </script>
+</body>
+</html>
